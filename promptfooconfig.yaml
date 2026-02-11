@@ -6,7 +6,7 @@ providers:
   - id: http
     label: customer-support-agent-example
     config:
-      url: {{endpoint}}
+      url: <ENDPOINT>
       method: POST
       headers:
         Content-Type: application/json
