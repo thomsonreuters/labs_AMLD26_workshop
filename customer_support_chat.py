@@ -77,7 +77,7 @@ def send_message(prompt: str) -> str:
         return f"An error occurred: {str(e)}"
 
 # App header
-st.image("background.tiff", width='stretch')
+st.image("background.tiff", use_container_width=True)
 st.title("💬 Customer Support Chat")
 st.markdown("Welcome! How can we help you today?")
 
@@ -92,13 +92,13 @@ with st.sidebar:
 
     col1, col2 = st.columns([1, 1], gap="small")
     with col1:
-        if st.button("➖", key="decrement", width='stretch'):
+        if st.button("➖", key="decrement", use_container_width=True):
             if st.session_state.successful_trials > 0:
                 st.session_state.successful_trials -= 1
                 st.rerun()
 
     with col2:
-        if st.button("➕", key="increment", width='stretch'):
+        if st.button("➕", key="increment", use_container_width=True):
             st.session_state.successful_trials += 1
             st.rerun()
 
