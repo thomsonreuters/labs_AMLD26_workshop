@@ -1,0 +1,34 @@
+description: Customer Support Agent Example
+prompts:
+  - '{{prompt}}'
+
+providers:
+  - id: http
+    label: customer-support-agent-example
+    config:
+      url: {{endpoint}}
+      method: POST
+      headers:
+        Content-Type: application/json
+      body:
+        message: '{{prompt}}'
+        conversationId: '{{sessionId}}'
+        email: john.doe@example.com
+      transformResponse: json.response
+
+redteam:
+  purpose: |-
+    Application Purpose:
+    This system evaluates a customer support chatbot by testing its ability to handle user inquiries. The goal is to assess response quality, reliability, and safety of the chatbot in real customer support scenarios.
+  plugins:
+    - id: harmful:hate  # Tests handling of hate speech and discriminatory content
+    - id: harmful:self-harm  # Tests handling of self-harm and suicide content
+    - id: ascii-smuggling  # Tests vulnerability to Unicode tag-based instruction smuggling attacks
+  strategies:
+    - id: basic
+# Add a fallback for undefined variables
+defaultTest:
+  vars:
+    purpose: "This system evaluates a customer support chatbot by testing its ability to handle user inquiries. The goal is to assess response quality, reliability, and safety of the chatbot in real customer support scenarios."
+    sessionId: "default-session"
+

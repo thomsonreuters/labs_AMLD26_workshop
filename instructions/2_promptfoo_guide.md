@@ -42,6 +42,12 @@ Alternatively, you can use npx to run it without global installation:
 npx promptfoo@latest
 ```
 
+To verify the installation, run:
+
+```bash
+promptfoo --version
+```
+
 ### Running Promptfoo
 
 1. **Customize** your attack strategy:
