@@ -48,3 +48,9 @@ The app will open in your default browser at `http://localhost:8501`
 - Each conversation is assigned a unique session ID to maintain context
 - The app maintains chat history during the session
 - Use the "Start New Conversation" button in the sidebar to reset and begin a fresh conversation
+
+## Manual Prompt Injection
+Some material on how to build adversarial prompts:
+- https://learnprompting.org/docs/prompt_hacking/injection
+- https://fdzdev.medium.com/20-prompt-injection-techniques-every-red-teamer-should-test-b22359bfd57d
+- https://promptintel.novahunting.ai/feed
