@@ -1,6 +1,10 @@
 import streamlit as st
 import requests
+import urllib3
 import uuid
+
+# Suppress SSL warning for workshop (not for production use)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from typing import Dict, List
 import os
 from dotenv import load_dotenv
@@ -57,7 +61,8 @@ def send_message(prompt: str) -> str:
             API_URL,
             json=payload,
             headers=headers,
-            timeout=30
+            timeout=30,
+            verify=False  # Disable SSL verification for workshop only
         )
 
         response.raise_for_status()
