@@ -50,7 +50,9 @@ promptfoo --version
 
 ### Running Promptfoo
 
-1. **Customize** your attack strategy:
+1. **Configure** the target endpoint in the `promptfooconfig.yaml` (it is the same used in the previous run).
+
+2. **Customize** your attack strategy:
    In the project you can find a pre-built `promptfooconfig.yaml` with the basics configurations to start the attack. You can customize your file by adding new **plugins** and **strategies**.
 
    To get additional information you can refer to Promptfoo official doc for [plugins](https://www.promptfoo.dev/docs/red-team/plugins/) and [strategies](https://www.promptfoo.dev/docs/red-team/strategies/).
